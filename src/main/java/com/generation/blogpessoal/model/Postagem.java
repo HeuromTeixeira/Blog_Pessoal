@@ -36,6 +36,8 @@ public class Postagem {
     @JsonIgnoreProperties("postagem")
     private Usuario usuario;
 
+
+
     public void setId(Long id) {
         this.id = id;
     }
