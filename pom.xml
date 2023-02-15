@@ -70,10 +70,10 @@
 				<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 				<version>2.0.2</version>
 	</dependency>
-	<dependency>
+		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-	</dependency>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -83,6 +83,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>
