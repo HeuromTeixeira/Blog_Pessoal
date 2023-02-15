@@ -17,12 +17,12 @@ public class Postagem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "O Atributo texto é Obrigatório!")
     @Size(min = 5 , max = 100, message = " O atributo titulo, no minimo 5 e no maximo 100!")
     private String titulo;
 
-    @NotBlank
-    @Size(min = 10, max = 1000)
+    @NotBlank(message = "O Atributo texto é Obrigatório!")
+    @Size(min = 10, max = 1000, message = "O Atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
     private  String texto;
 
     @UpdateTimestamp
@@ -36,18 +36,36 @@ public class Postagem {
     @JsonIgnoreProperties("postagem")
     private Usuario usuario;
 
-
+    public Long getId() {
+        return id;
+    }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
+    }
+
+    public LocalDateTime getData() {
+        return data;
+    }
+
+    public void setData(LocalDateTime data) {
+        this.data = data;
     }
 
     public Tema getTema() {
@@ -58,35 +76,11 @@ public class Postagem {
         this.tema = tema;
     }
 
-    public Long getId() {
-        return this.id;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getTitulo() {
-        return this.titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getTexto() {
-        return this.texto;
-    }
-
-    public void setTexto(String texto) {
-        this.texto = texto;
-    }
-
-    public LocalDateTime getData() {
-        return this.data;
-    }
-
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
